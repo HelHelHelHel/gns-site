@@ -13,27 +13,27 @@ class Directory extends React.Component {
           title: 'gun parts',
           imageUrl: 'https://images.unsplash.com/photo-1583368806788-309fe83a78f2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
           id: 1,
-          linkUrl: 'shop/hats'
+          linkUrl: ''
         },
         {
           title: 'scopes',
           imageUrl: 'https://images.unsplash.com/photo-1584345513379-1d2d4529be26?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
           id: 2,
-          linkUrl: 'shop/womens'
+          linkUrl: ''
           
         },
         {
           title: 'ammunition',
           imageUrl: 'https://images.unsplash.com/photo-1581955957575-542d613ed134?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
           id: 3,
-          linkUrl: 'shop/sneakers'
+          linkUrl: ''
         },
         {
           title: 'guns',
           imageUrl: 'https://images.unsplash.com/photo-1579185404511-7ea02696b706?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
           id: 4,
           size: 'large',
-          linkUrl: 'shop/jackets'
+          linkUrl: 'guns'
         },
         {
           title: 'gun accessories',
@@ -41,7 +41,7 @@ class Directory extends React.Component {
           size: 'large',
           id: 5,
           
-          linkUrl: 'shop/mens'
+          linkUrl: ''
         }
       ]
     }
@@ -50,8 +50,8 @@ class Directory extends React.Component {
     return (
       <div class="directory-menu">
       {
-      this.state.sections.map(({ title, id, imageUrl, size }) => (
-        <MenuItem key={id} title={title} imageUrl={imageUrl} size={size}/>
+      this.state.sections.map(({ id, ...otherProps}) => (
+        <MenuItem key={id} {...otherProps}/>
       ))
   }
     </div>
